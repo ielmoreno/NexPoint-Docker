@@ -1,0 +1,20 @@
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-3.0.x"]
+  previewFeatures = ["typedSql"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model pois {
+  id              Int        @id @default(autoincrement()) @db.UnsignedInt
+  nome            String     @db.VarChar(255)
+  coordinateX     Int        @db.UnsignedInt
+  coordinateY     Int        @db.UnsignedInt
+  ativo           Int        @default(0)
+  created_at      DateTime   @default(now())
+}
+
