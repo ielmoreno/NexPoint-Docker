@@ -9,8 +9,10 @@ O NexPoint é uma aplicação teste de unificação do **FrontEnd**, **BackEnd**
 
 # Índice
 
-1. [Testar](https://github.com/ielmoreno/NexPoint-Docker.git/README.md#testar)
-2. [FrontEnd](https://github.com/ielmoreno/NexPoint-Docker.git/README.md#frontend)
+1. [Testar](https://github.com/ielmoreno/NexPoint-Docker/blob/main/README.md#Testar)
+2. [FrontEnd](https://github.com/ielmoreno/NexPoint-Docker/blob/main/README.md#FrontEnd)
+3. [Prints](https://github.com/ielmoreno/NexPoint-Docker/blob/main/README.md#Prints)
+4. [BackEnd](https://github.com/ielmoreno/NexPoint-Docker/blob/main/README.md#BackEnd)
 
 ## Testar
 
@@ -33,3 +35,38 @@ http://localhost:3000
 
 ## FrontEnd
 
+O FrontEnd foi desenvolvido utilizando Next.JS com TypeScript + Tailwinds.css.
+
+Foi estruturado de forma simples para atender aos requisitos mínimos de um ***CRUD***, sendo assim não foi utilizado nenhuma estrutura de roteamento para outras páginas, sendo assim sobrando somente uma estrutura de estados para que fosse apresentado o conteúdo.
+
+## Prints
+
+#### Tela inicial
+![Image](https://github.com/user-attachments/assets/fe97b541-48e9-4128-825a-8751958d5d86)
+
+#### Tela de cadastro
+![Image](https://github.com/user-attachments/assets/a973f9e8-2218-44bf-a4a2-f945c3a34a57)
+
+#### Tela de busca por proximidade
+![Image](https://github.com/user-attachments/assets/034e5783-609d-4e99-8f40-a334c4f78c29)
+
+#### Modal de edição
+![Image](https://github.com/user-attachments/assets/0f29f70c-a92e-42ca-ae9f-cfa2d0d71029)
+
+## BackEnd
+
+Para a estrutura de BackEnd, foi utilizado o Node.JS com Express para a criação de uma ***API REST***, onde os dados são validados através da biblioteca ***ZOD*** e se comunica com o banco de dados através do *ORM* **PRISMA**.
+
+Para a estruturação dos arquivos foi adotado uma arquitetura onde cada *EndPoint* é alocado na pasta de sua rota, facilitando a organização e manutenção do código.
+
+#### Estrutura de rotas
+
+```TypeScript
+router.post('/', createPoi)
+router.get('/', poisList)
+router.get('/near', poisByNear)
+router.get('/ativo/:ativo', poisByActive)
+router.get('/:id', poiById)
+router.put('/:id', editPoi)
+router.delete('/:id', deletePoi) 
+```
