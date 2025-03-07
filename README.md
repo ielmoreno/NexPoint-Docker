@@ -13,6 +13,7 @@ O NexPoint é uma aplicação teste de unificação do **FrontEnd**, **BackEnd**
 2. [FrontEnd](https://github.com/ielmoreno/NexPoint-Docker/blob/main/README.md#FrontEnd)
 3. [Prints](https://github.com/ielmoreno/NexPoint-Docker/blob/main/README.md#Prints)
 4. [BackEnd](https://github.com/ielmoreno/NexPoint-Docker/blob/main/README.md#BackEnd)
+5. [Docker](https://github.com/ielmoreno/NexPoint-Docker/blob/main/README.md#Docker)
 
 ## Testar
 
@@ -70,3 +71,16 @@ router.get('/:id', poiById)
 router.put('/:id', editPoi)
 router.delete('/:id', deletePoi) 
 ```
+
+## Docker
+
+Com o objetivo principal de unificar o FrontEnd, o BackEnd e o banco de dados em um único container para facilitar a execução dos componentes, foi utilizado a estrutura em Docker criando um Dockerfile para o FrontEnd e um Dockerfile para o BackEnd com todas as especificidades necessárias para parte do projeto poder copiar os arquivos para dentro do container, buildar e iniciar e para orquestrar toda a rotina bem como configurar as estruturas do banco de dados foi utilizado o docker-compose.yml no qual pude deixar configurado um arquivo .sql e solicitar que logo na primeira inicialização do MySQL seja executado esse arquivo podendo assim já criar a base e suas tabelas e popular com alguns poucos itens. 
+
+#### Container unificado
+![Image](https://github.com/user-attachments/assets/9bfa80db-c047-4c28-8954-2f448a6a011e)
+
+#### Imagens das virtualizações
+![Image](https://github.com/user-attachments/assets/4a823be0-49c5-45fc-affc-cddd94098b49)
+
+#### Volume do banco de dados
+![Image](https://github.com/user-attachments/assets/beb945cb-016f-4960-a8a4-7c754c28ba62)
